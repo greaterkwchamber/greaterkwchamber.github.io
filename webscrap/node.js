@@ -1,6 +1,7 @@
 var request = require('request');
 var cheerio = require('cheerio');
 var express = require('express');
+var fs = require('fs');
 var http = require('http');
 var url = require('url');
 var bodyParser = require('body-parser');
@@ -148,18 +149,19 @@ function extractURLsFromURL(currentID){
         if(value.length){
           // console.log(value);
 
+          console.log(currentID)
+          var valueRaw = ucDirectory_UcListing_lblOwner +',,' +
+            ucDirectory_UcListing_lblAddress1 +',,' +
+            ucDirectory_UcListing_lblCity +',,' +
+            ucDirectory_UcListing_lblStateProvince +',,' +
+            ucDirectory_UcListing_lblZipPostal +',,' +
+            ucDirectory_UcListing_lblFax +',,' +
+            ucDirectory_UcListing_lblPhone1 +',,' +
+            ucDirectory_UcListing_hlWebsite + '\r\n';
 
-        console.log(ucDirectory_UcListing_lblOwner +'','' +
-        ucDirectory_UcListing_lblTitle +'','' +
-        ucDirectory_UcListing_lblAddress1 +'','' +
-        ucDirectory_UcListing_lblCity +'','' +
-        ucDirectory_UcListing_lblStateProvince +'','' +
-        ucDirectory_UcListing_lblZipPostal +'','' +
-        ucDirectory_UcListing_lblFax +'','' +
-
-        ucDirectory_UcListing_lblPhone1 +'','' +
-        ucDirectory_UcListing_hlEmail +'','' +
-        ucDirectory_UcListing_hlWebsite );
+            fs.appendFile('listraw.txt', valueRaw, function (err) {
+              console.log(err)
+            });
 
         }
 
