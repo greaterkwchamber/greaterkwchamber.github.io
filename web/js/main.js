@@ -20,7 +20,7 @@ function myFunction() {
     }
     toggle_visibility('loadingMask', 'show');
     $.ajax({url: "https://greaterkwchamber.herokuapp.com/?q=" + x.value, success: function(result){
-        console.log(result);
+        // console.log(result);
         toggle_visibility('loadingMask', 'hide');
         $("#listOfPeople").empty();
         for(var i=0; i<result.length; i++){
@@ -40,3 +40,12 @@ function myFunction() {
     }});
     // x.value = x.value.toUpperCase();
 }
+
+function getCount() {
+    $.ajax({url: "https://greaterkwchamber.herokuapp.com/count", success: function(result){
+        console.log(result);
+        // $("#listOfPeople").empty();
+      }
+    });
+}
+getCount();

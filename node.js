@@ -116,6 +116,10 @@ app.get('/', function (req, res) {
     
 });
 
+app.get('/count', function (req, res) {
+  res.json(records.length);
+});
+
 
 
 
