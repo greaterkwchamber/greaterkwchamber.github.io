@@ -27,7 +27,7 @@ function myFunction() {
           // console.log(result[i])
           var url = '';
           if(result[i].ucdirectory_uclisting_hlwebsite.length > 0){
-            url = '<a href="' + result[i].ucdirectory_uclisting_hlwebsite +
+            url = '<a target="_blank" href="' + result[i].ucdirectory_uclisting_hlwebsite +
                   '">' + result[i].ucdirectory_uclisting_hlwebsite + '</a>';
           }
           $("#listOfPeople").append('<li class="collection-item avatar"><i class="material-icons circle blue">place</i><span class="title">' + 
