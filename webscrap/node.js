@@ -146,10 +146,11 @@ function extractURLsFromURL(currentID){
         }
         );
       
+        console.log(currentID + ': ' + value.length)
         if(value.length){
           // console.log(value);
 
-          console.log(currentID)
+          
           var valueRaw = ucDirectory_UcListing_lblOwner +',,' +
             ucDirectory_UcListing_lblAddress1 +',,' +
             ucDirectory_UcListing_lblCity +',,' +
@@ -160,7 +161,7 @@ function extractURLsFromURL(currentID){
             ucDirectory_UcListing_hlWebsite + '\r\n';
 
             fs.appendFile('listraw.txt', valueRaw, function (err) {
-              console.log(err)
+              // console.log(err)
             });
 
         }
