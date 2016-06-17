@@ -23,6 +23,7 @@ function myFunction() {
         // console.log(result);
         toggle_visibility('loadingMask', 'hide');
         $("#listOfPeople").empty();
+        setTitleText(result.length)
         for(var i=0; i<result.length; i++){
           // console.log(result[i])
           var url = '';
@@ -43,9 +44,12 @@ function myFunction() {
 
 function getCount() {
     $.ajax({url: "https://greaterkwchamber.herokuapp.com/count", success: function(result){
-        console.log(result);
-        // $("#listOfPeople").empty();
+        setTitleText(result)
       }
     });
+}
+
+function setTitleText(result){
+  $('#logo-container').text('Chamber of Commerce - Kitchener/Waterloo (' + result + ')')
 }
 getCount();
