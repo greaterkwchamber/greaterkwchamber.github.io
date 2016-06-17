@@ -30,7 +30,7 @@ function myFunction() {
             url = '<a href="' + result[i].ucdirectory_uclisting_hlwebsite +
                   '">' + result[i].ucdirectory_uclisting_hlwebsite + '</a>';
           }
-          $("#listOfPeople").append('<li class="collection-item avatar"><i class="material-icons circle">perm_identity</i><span class="title">' + 
+          $("#listOfPeople").append('<li class="collection-item avatar"><i class="material-icons circle blue">place</i><span class="title">' + 
             result[i].ucdirectory_uclisting_lblowner + ' ' + url + '</span><p style="text-align:left;">' + 
           result[i].ucdirectory_uclisting_lbladdress1 + ', ' +
           result[i].ucdirectory_uclisting_lblcity +
