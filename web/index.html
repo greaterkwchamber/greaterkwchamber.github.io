@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Chamber of Commerce</title>
+  <link rel="shortcut icon" href="image/favicon.ico">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Chamber of Commerce - Kitchener/Waterloo</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="section">
+
+     <div class="row">
+        <div class="input-field col s12">
+          <input id="first_name2" type="text" class="validate" onkeyup="myFunction()">
+          <label class="active" for="first_name2">Search</label>
+        </div>
+      </div>
+
+      <center>
+      <div class="preloader-wrapper big active s12" id="loadingMask" style="display: none;" >
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+        </center>
+      <ul class="collection" id="listOfPeople">
+        <li class="collection-item avatar">
+        
+        <i class="material-icons circle">perm_identity</i>
+          <span class="title">First and Last Name</span> 
+          <p style="text-align:left;">
+            Address
+          <span style="float:right;">Phone Number</span>
+          </p>
+        </li>
+      </ul>
+
+      
+
+    </div>
+  </div>
+
+
+  <footer class="page-footer blue">
+   
+    <div class="footer-copyright">
+      <div class="container">
+      Copyright &copy; 2016 <a href="http://webgeeksmarketing.com/" rel="home" style="color: white">Web Geeks | Windsor, ON</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/main.js"></script>
+
+  </body>
+</html>
