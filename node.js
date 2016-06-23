@@ -27,8 +27,8 @@ pg.connect(process.env.DATABASE_URL, function(err, client) {
 });
 
 var records = [];
-
-var inputFile='rawlist.csv';
+var inputFile='rawlistwithname.csv';
+// var inputFile='rawlist.csv';
 //ucDirectory_UcListing_lblOwner,
 //ucDirectory_UcListing_lblAddress1,
 //ucDirectory_UcListing_lblCity,
@@ -37,6 +37,7 @@ var inputFile='rawlist.csv';
 //ucDirectory_UcListing_lblFax,
 //ucDirectory_UcListing_lblPhone1,
 //ucDirectory_UcListing_hlWebsite
+//ucDirectory_UcListing_lblCompanyName
 
 var parser = parse({delimiter: ','}, function (err, data) {
   async.eachSeries(data, function (line, callback) {
@@ -52,7 +53,8 @@ var parser = parse({delimiter: ','}, function (err, data) {
         ucdirectory_uclisting_lblfax: line[5],
         ucdirectory_uclisting_lblphone1: line[6],
         // ucdirectory_uclisting_hlemail: line[121],
-        ucdirectory_uclisting_hlwebsite: line[7]
+        ucdirectory_uclisting_hlwebsite: line[7],
+        ucDirectory_UcListing_lblCompanyName: line[8]
       });
       callback();
     });
@@ -87,7 +89,8 @@ function search(nameKey, myArray, searchType){
           	myArray[i].ucdirectory_uclisting_lblfax.toLowerCase().indexOf(nameKey.toLowerCase()) > -1 ||
           	myArray[i].ucdirectory_uclisting_lblphone1.toLowerCase().indexOf(nameKey.toLowerCase()) > -1 ||
           	// myArray[i].ucdirectory_uclisting_hlemail.toLowerCase().indexOf(nameKey.toLowerCase()) > -1 ||
-          	myArray[i].ucdirectory_uclisting_hlwebsite.toLowerCase().indexOf(nameKey.toLowerCase()) > -1
+            myArray[i].ucdirectory_uclisting_hlwebsite.toLowerCase().indexOf(nameKey.toLowerCase()) > -1 ||
+          	myArray[i].ucDirectory_UcListing_lblCompanyName.toLowerCase().indexOf(nameKey.toLowerCase()) > -1
 
           	) {
               myNewArray.push(myArray[i]);
