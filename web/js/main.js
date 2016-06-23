@@ -20,7 +20,7 @@ function myFunction() {
     }
     toggle_visibility('loadingMask', 'show');
     $.ajax({url: "https://greaterkwchamber.herokuapp.com/?q=" + x.value, success: function(result){
-        // console.log(result);
+        console.log(result);
         toggle_visibility('loadingMask', 'hide');
         $("#listOfPeople").empty();
         setTitleText(result.length)
@@ -31,8 +31,15 @@ function myFunction() {
             url = '<a target="_blank" href="' + result[i].ucdirectory_uclisting_hlwebsite +
                   '">' + result[i].ucdirectory_uclisting_hlwebsite + '</a>';
           }
+          var mainName = result[i].ucDirectory_UcListing_lblCompanyName;
+          if(mainName == 'none'){
+            mainName = result[i].ucdirectory_uclisting_lblowner
+          }else{
+            mainName = result[i].ucdirectory_uclisting_lblowner + ' <i>(' + mainName + ')</i>';
+          }
+          
           $("#listOfPeople").append('<li class="collection-item avatar"><i class="material-icons circle blue">place</i><span class="title">' + 
-            result[i].ucdirectory_uclisting_lblowner + ' ' + url + '</span><p style="text-align:left;">' + 
+            mainName + ' ' + url + '</span><p style="text-align:left;">' + 
           result[i].ucdirectory_uclisting_lbladdress1 + ', ' +
           result[i].ucdirectory_uclisting_lblcity +
           result[i].ucdirectory_uclisting_lblstateprovince + '<span style="float:right;">' +
