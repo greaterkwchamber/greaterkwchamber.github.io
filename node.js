@@ -97,7 +97,7 @@ function search(nameKey, myArray, searchType){
           }
         }
     }
-    return myNewArray.slice(0,49);
+    return myNewArray.slice(0,50);
 }
 
 app.get('/', function (req, res) {
