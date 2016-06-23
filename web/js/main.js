@@ -20,10 +20,16 @@ function myFunction() {
     }
     toggle_visibility('loadingMask', 'show');
     $.ajax({url: "https://greaterkwchamber.herokuapp.com/?q=" + x.value, success: function(result){
-        console.log(result);
+        // console.log(result);
         toggle_visibility('loadingMask', 'hide');
         $("#listOfPeople").empty();
-        setTitleText(result.length)
+
+        if(result.length >= 50){
+          setTitleText('50+');
+        }else{
+          setTitleText(result.length);
+        }
+        // console.log(result.length)
         for(var i=0; i<result.length; i++){
           // console.log(result[i])
           var url = '';
